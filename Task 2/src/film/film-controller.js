@@ -2,7 +2,7 @@ const db = require('../../database.js');
 
 const createFilm = async (req, res) => {
     const { filmName, released, genreId } = req.body;
-    const film = await db.query(`   INSERT INTO film 
+    const film = await db.query(`   INSERT INTO films.film 
                                     (film_name, released, genre_id)
                                     VALUES ($1, $2, $3) 
                                     RETURNING *                               
